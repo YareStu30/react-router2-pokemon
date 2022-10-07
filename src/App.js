@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ImgProvider from "./context";
+import Navbar from "./Components/Navbar";
+import Home from "./views/Home";
+import SearchPkm from "./views/SearchPkm"
+import DetailsPkm from "./Components/DetailsPkm";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ImgProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/pokemones" element={<SearchPkm />} />
+          <Route path="/pokemones/:name" element={<DetailsPkm />} />
+        </Routes>
+      </BrowserRouter>
+    </ImgProvider>
   );
 }
-
-export default App;
