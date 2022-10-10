@@ -33,7 +33,7 @@ const DetailsPkm = () => {
             <>
               <ul className="list">
                 {poke.stats?.map((stat, i) => (
-                  <li key={i}>
+                  <li className="list2" key={i}>
                     {stat.stat.name} : {stat.base_stat}
                   </li>
                 ))}
