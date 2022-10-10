@@ -1,37 +1,27 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Context } from "../context";
+import { DataContext } from "../context/ImgProvider";
 
 const SearchPkm = () => {
-  const { data } = useContext(Context);
-  const [name, setName] = useState("");
+  const { listName } = useContext(DataContext);
 
   const navigate = useNavigate();
-  const handle = (event) => {
-    const character = event.target.value;
-    if (character && character !== "") {
-      setName(character);
-    }
-  };
-
   const goPokemon = (name) => {
     navigate(`/pokemones/${name}`);
   };
-
+  console.log(listName);
   return (
     <>
       <div className="search">
-        {console.log(data)}
         <h2>Selecciona el Pokémon que quieras</h2>
         <select
           className="selector"
           onChange={(event) => goPokemon(event.target.value)}
         >
           <option value="">Pokemon</option>
-          {data.results.map((personaje) => (
-            <option key={personaje.name} value={personaje.name}>
-              {" "}
-              {personaje.name}
+          {listName?.results?.map((pokemon, i) => (
+            <option key={pokemon.name} value={pokemon.name}>
+              {pokemon.name}
             </option>
           ))}
         </select>

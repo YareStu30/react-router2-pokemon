@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const DetailsPkm = () => {
-  const [poke, setPoke] = useState();
+  const [poke, setPoke] = useState([]);
 
   const { name } = useParams();
 
@@ -15,8 +15,8 @@ const DetailsPkm = () => {
     };
 
     getAPI();
-  }, []);
-
+  }, [name]);
+  console.log(poke);
   return (
     <>
       <h1 className="title2">Características Pokémon</h1>
@@ -24,19 +24,21 @@ const DetailsPkm = () => {
         <>
           <div className="imgP">
             <p>Nombre: {poke.name}</p>
-            <img src={poke.image} />
             <img
               src={poke.sprites?.other.home.front_default}
               alt={poke.name}
               className="pokemon-img"
-            />
-            <ul className="list">
-              <li>hp: {poke.stats[1].base_stat}</li>
-              <li>attack: {poke.stats[2].base_stat}</li>
-              <li>defense: {poke.stats[3].base_stat}</li>
-              <li>special-attack: {poke.stats[4].base_stat}</li>
-              <li>type: {poke.types[0].type.name}</li>
-            </ul>
+            ></img>
+
+            <>
+              <ul className="list">
+                {poke.stats?.map((stat, i) => (
+                  <li key={i}>
+                    {stat.stat.name} : {stat.base_stat}
+                  </li>
+                ))}
+              </ul>
+            </>
           </div>
         </>
       )}

@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ImgProvider from "./context";
+import ImgProvider from "./context/ImgProvider";
 import Navbar from "./Components/Navbar";
 import Home from "./views/Home";
-import SearchPkm from "./views/SearchPkm"
+import SearchPkm from "./views/SearchPkm";
 import DetailsPkm from "./Components/DetailsPkm";
 
 export default function App() {

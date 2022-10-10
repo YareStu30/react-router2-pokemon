@@ -7,14 +7,14 @@ export default function Navbar () {
   return (
     <nav>
     <div>
-    <img src='https://img.icons8.com/color/344/pokeball-2.png'width="50px" className='pokeIcon' /> 
+    <img src='https://img.icons8.com/color/344/pokeball-2.png'width="50px" className='pokeIcon' alt='pokemon'/> 
       <NavLink className={setActiveClass} end to='/'>
-      <img src='https://cdn-icons-png.flaticon.com/512/189/189000.png'width="50px"  /> 
+      <img src='https://cdn-icons-png.flaticon.com/512/189/189000.png'width="50px"  alt='pokemon snorlax'/> 
         Home
       </NavLink>
       {' - '}
       <NavLink className={setActiveClass} to='/pokemones'>
-      <img src='https://cdn-icons-png.flaticon.com/512/189/189001.png'width="50px"  />
+      <img src='https://cdn-icons-png.flaticon.com/512/189/189001.png'width="50px"  alt='pokemon psyduck' />
         Pokémon
        
       </NavLink>
