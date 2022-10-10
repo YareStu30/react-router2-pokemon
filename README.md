@@ -1,3 +1,6 @@
+link al proyecto: https://magenta-nasturtium-e3c5b8.netlify.app/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
