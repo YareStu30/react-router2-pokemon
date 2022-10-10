@@ -9,7 +9,6 @@ const SearchPkm = () => {
   const goPokemon = (name) => {
     navigate(`/pokemones/${name}`);
   };
-  console.log(listName);
   return (
     <>
       <div className="search">

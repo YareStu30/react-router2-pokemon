@@ -16,7 +16,7 @@ const DetailsPkm = () => {
 
     getAPI();
   }, [name]);
-  console.log(poke);
+
   return (
     <>
       <h1 className="title2">Características Pokémon</h1>
